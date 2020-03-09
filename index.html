@@ -41,7 +41,7 @@
 
       </div>
 
-      <nav class="nav-menu d-none d-lg-block">
+      <!--<nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="#header">Home</a></li>
          
@@ -87,7 +87,7 @@
             <div class="icon-box">
               <div class="icon"><i class="bx bxl-dribbble"></i></div>
               <h4 class="title"><a href="#faq">Digital, Analog I/O</a></h4>
-              <p class="description">Capable of jandling digital and analog inputs and outputs</p>
+              <p class="description">Capable of handling digital and analog inputs and outputs</p>
             </div>
           </div>
 
@@ -131,19 +131,19 @@
 
         <ul class="faq-list">
 
-          <li data-aos="fade-up" data-aos-delay="100">
+          <li data-aos="fade-up" data-aos-delay="50">
             <a data-toggle="collapse" class="" href="#faq1">Sensors<i class="icofont-simple-up"></i></a>
             <div id="faq1" class="collapse show" data-parent=".faq-list">
               <p>
                 The Board has temperature, humidity and light sensors mounted on it. These sensors are
-                interfaced using the I2C bus. Sensor readings are taken at regular intervals and displayed on
-                the LCD screen provided. The sensor data is also periodically streamed to a cloud database.<br>If the sensor readings exceed a threshold value then actions can be assigned. On the Demo
+                interfaced using the I<sup>2</sup>C bus. Sensor readings are taken at regular intervals and displayed on
+                the LCD screen. The sensor data is also periodically streamed to a cloud database.<br>If the sensor readings exceed a threshold value then actions can be assigned. On the Demo
                 Board, two LEDs are interfaced to light up if humidity and light thresholds are crossed.<br>The threshold values can be set by the user.
               </p>
             </div>
           </li>
 
-          <li data-aos="fade-up" data-aos-delay="200">
+          <li data-aos="fade-up" data-aos-delay="100">
             <a data-toggle="collapse" href="#faq2" class="collapsed">Analog I/O<i class="icofont-simple-up"></i></a>
             <div id="faq2" class="collapse" data-parent=".faq-list">
               <p>
@@ -152,7 +152,7 @@
             </div>
           </li>
 
-          <li data-aos="fade-up" data-aos-delay="300">
+          <li data-aos="fade-up" data-aos-delay="150">
             <a data-toggle="collapse" href="#faq3" class="collapsed">Digital I/O<i class="icofont-simple-up"></i></a>
             <div id="faq3" class="collapse" data-parent=".faq-list">
               <p>
@@ -161,7 +161,7 @@
             </div>
           </li>
 
-          <li data-aos="fade-up" data-aos-delay="400">
+          <li data-aos="fade-up" data-aos-delay="200">
             <a data-toggle="collapse" href="#faq4" class="collapsed">Remote Connectivity<i class="icofont-simple-up"></i></a>
             <div id="faq4" class="collapse" data-parent=".faq-list">
               <p>
@@ -176,7 +176,7 @@
             </div>
           </li>
 
-          <li data-aos="fade-up" data-aos-delay="500">
+          <li data-aos="fade-up" data-aos-delay="250">
             <a data-toggle="collapse" href="#faq5" class="collapsed">Display<i class="icofont-simple-up"></i></a>
             <div id="faq5" class="collapse" data-parent=".faq-list">
               <p>
@@ -185,17 +185,17 @@
             </div>
           </li>
 
-          <li data-aos="fade-up" data-aos-delay="600">
+          <li data-aos="fade-up" data-aos-delay="300">
             <a data-toggle="collapse" href="#faq6" class="collapsed">Dual Core<i class="icofont-simple-up"></i></a>
             <div id="faq6" class="collapse" data-parent=".faq-list">
               <p>
-                In order to have a quick and responsive user experience, a dual core processor is used. One core handles inputs and outputs that need to be immediate while the other core handles the network and communication tasks as well as reading some sensors.<br> This provides improved functionality and performance and may be important in use cases where certain tasks cannot be delayed even while the microcontroller performing other functions.
+                In order to have a quick and responsive user experience, a dual core processor is used. One core handles inputs and outputs that need to be immediate while the other core handles the network and communication tasks as well as reading some sensors.<br> This provides improved functionality and performance and may be important in cases where certain tasks cannot be delayed even while the microcontroller is performing other functions.
               </p>
             </div>
           </li>
 
-          <li data-aos="fade-up" data-aos-delay="700">
-            <a data-toggle="collapse" href="#faq7" class="collapsed">Cloud Connectivity<i class="icofont-simple-up"></i></a>
+          <li data-aos="fade-up" data-aos-delay="350">
+            <a data-toggle="collapse" href="#faq7" class="collapsed">Cloud Communication<i class="icofont-simple-up"></i></a>
             <div id="faq7" class="collapse" data-parent=".faq-list">
               <p>
                 The sensor data and settings for the device are stored on a remote server. The Board communicates with the server using HTTP GET requests. On the first boot, the Board makes a GET request to the server to receive the latest settings. The server responds with a JSON string containing the settings. If the initial connection fails, the device keeps trying to connect again and does not proceed until the settings are received. Once the settings are received, the server periodically streams the sensor readings to the server.<br>On the server, the settings and sensor data are stored in a database. Separate tables are made for each sensor and for each setting.
