@@ -208,6 +208,95 @@
       </div>
     </section><!-- End F.A.Q Section -->
 
+    <!-- ======= Live Values Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <!--<h2>Services</h2>-->
+          <p>Live Values</p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="50">
+            <div class="icon-box">
+              
+              <h1 class="section-title" id="temp"></h1>
+              <h4 class="title">Temperature</h4>
+              <script>
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                    var myObj = JSON.parse(this.responseText);
+                    document.getElementById("temp").innerHTML = myObj.feeds[0].field1 + " " + "&#x2103;";
+                  }
+                };
+                xmlhttp.open("GET", "https://api.thingspeak.com/channels/966231/fields/1.json?api_key=ERWGXVTZZX4ZU1M1&results=1", true);
+                xmlhttp.send();
+              </script>
+
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <h1 class="section-title" id="hum"></h1>
+              <h4 class="title">Humidity</h4>
+              <script>
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                    var myObj = JSON.parse(this.responseText);
+                    document.getElementById("hum").innerHTML = myObj.feeds[0].field2 + " " + "%";
+                  }
+                };
+                xmlhttp.open("GET", "https://api.thingspeak.com/channels/966231/fields/2.json?api_key=ERWGXVTZZX4ZU1M1&results=1", true);
+                xmlhttp.send();
+              </script>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="150">
+            <div class="icon-box">
+              <h1 class="section-title" id="lux"></h1>
+              <h4 class="title">Light</h4>
+              <script>
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                    var myObj = JSON.parse(this.responseText);
+                    document.getElementById("lux").innerHTML = myObj.feeds[0].field3 + " " + "lux";
+                  }
+                };
+                xmlhttp.open("GET", "https://api.thingspeak.com/channels/966231/fields/3.json?api_key=ERWGXVTZZX4ZU1M1&results=1", true);
+                xmlhttp.send();
+              </script>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <h1 class="section-title" id="amp"></h1>
+              <h4 class="title">Current</h4>
+              <script>
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                    var myObj = JSON.parse(this.responseText);
+                    document.getElementById("amp").innerHTML = myObj.feeds[0].field4 + " " + "mA";
+                  }
+                };
+                xmlhttp.open("GET", "https://api.thingspeak.com/channels/966231/fields/4.json?api_key=ERWGXVTZZX4ZU1M1&results=1", true);
+                xmlhttp.send();
+              </script>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Live Values Section -->
+
     
 
   </main><!-- End #main -->
