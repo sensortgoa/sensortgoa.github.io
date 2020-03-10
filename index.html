@@ -44,7 +44,7 @@
       <!--<nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="#header">Home</a></li>
-         
+
         </ul>
       </nav><!-- .nav-menu -->
 
@@ -71,7 +71,7 @@
 
   <main id="main">
 
-   
+
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
@@ -219,8 +219,9 @@
         <div class="row">
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="50">
             <div class="icon-box">
-              
+
               <h1 class="section-title" id="temp"></h1>
+              <p id="temptime"></p>
               <h4 class="title">Temperature</h4>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
               <script>
@@ -229,6 +230,8 @@
                   if (this.readyState == 4 && this.status == 200) {
                     var myObj = JSON.parse(this.responseText);
                     document.getElementById("temp").innerHTML = myObj.feeds[0].field1 + " " + "&#x2103;";
+                    var tim = myObj.feeds[0].created_at;
+                    document.getElementById("temptime").innerHTML = tim.slice(0,10) + "<br>" + tim.slice(11,19);
                   }
                 };
                 xmlhttp.open("GET", "https://api.thingspeak.com/channels/966231/fields/1.json?api_key=ERWGXVTZZX4ZU1M1&results=1", true);
@@ -241,6 +244,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
               <h1 class="section-title" id="hum"></h1>
+              <p id="humtime"></p>
               <h4 class="title">Humidity</h4>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
               <script>
@@ -249,6 +253,8 @@
                   if (this.readyState == 4 && this.status == 200) {
                     var myObj = JSON.parse(this.responseText);
                     document.getElementById("hum").innerHTML = myObj.feeds[0].field2 + " " + "%";
+                    var tim = myObj.feeds[0].created_at;
+                    document.getElementById("humtime").innerHTML = tim.slice(0,10) + "<br>" + tim.slice(11,19);
                   }
                 };
                 xmlhttp.open("GET", "https://api.thingspeak.com/channels/966231/fields/2.json?api_key=ERWGXVTZZX4ZU1M1&results=1", true);
@@ -260,6 +266,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="150">
             <div class="icon-box">
               <h1 class="section-title" id="lux"></h1>
+              <p id="luxtime"></p>
               <h4 class="title">Light</h4>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
               <script>
@@ -268,6 +275,8 @@
                   if (this.readyState == 4 && this.status == 200) {
                     var myObj = JSON.parse(this.responseText);
                     document.getElementById("lux").innerHTML = myObj.feeds[0].field3 + " " + "lux";
+                    var tim = myObj.feeds[0].created_at;
+                    document.getElementById("luxtime").innerHTML = tim.slice(0,10) + "<br>" + tim.slice(11,19);
                   }
                 };
                 xmlhttp.open("GET", "https://api.thingspeak.com/channels/966231/fields/3.json?api_key=ERWGXVTZZX4ZU1M1&results=1", true);
@@ -279,6 +288,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="200">
             <div class="icon-box">
               <h1 class="section-title" id="amp"></h1>
+              <p id="amptime"></p>
               <h4 class="title">Current</h4>
               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
               <script>
@@ -287,6 +297,8 @@
                   if (this.readyState == 4 && this.status == 200) {
                     var myObj = JSON.parse(this.responseText);
                     document.getElementById("amp").innerHTML = myObj.feeds[0].field4 + " " + "mA";
+                    var tim = myObj.feeds[0].created_at;
+                    document.getElementById("amptime").innerHTML = tim.slice(0,10) + "<br>" + tim.slice(11,19);
                   }
                 };
                 xmlhttp.open("GET", "https://api.thingspeak.com/channels/966231/fields/4.json?api_key=ERWGXVTZZX4ZU1M1&results=1", true);
@@ -300,7 +312,7 @@
       </div>
     </section><!-- End Live Values Section -->
 
-    
+
 
   </main><!-- End #main -->
 
@@ -324,7 +336,7 @@
             </p>
           </div>
 
-          
+
         </div>
       </div>
     </div>
@@ -333,7 +345,7 @@
       <div class="copyright">
         &copy; Copyright <strong><span>Sensort 2020</span></strong>. All Rights Reserved
       </div>
-      
+
     </div>
   </footer><!-- End Footer -->
 
